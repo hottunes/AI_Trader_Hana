@@ -1,0 +1,8 @@
+.env
+.idea
+*.sqlgit rm -r --cached .ideaite
+**pycache**/
+captured_images/
+hana.pem
+trading_decisions.sqlite
+instructions_3decision.md

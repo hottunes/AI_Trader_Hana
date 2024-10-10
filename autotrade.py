@@ -232,7 +232,6 @@ def run_make_decision_and_execute() -> None:
 
 if __name__ == "__main__":
     initialize_db()
-    run_make_decision_and_execute()
     for hour in ["03:58", "07:58", "11:58", "15:58", "19:58", "23:58"]:
         schedule.every().day.at(hour, "UTC").do(run_make_decision_and_execute)
 

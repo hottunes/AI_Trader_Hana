@@ -23,8 +23,8 @@ async def navigate_and_capture(page, url):
     try:
         logger.info(f"Navigating to {url}")
         await page.goto(url, timeout=300000)
-        logger.info("Waiting 40 seconds for elements to load...")
-        await asyncio.sleep(40)  # Wait for all elements to load
+        logger.info("Waiting 120 seconds for elements to load...")
+        await asyncio.sleep(120)  # Wait for all elements to load
         chart_container = await page.query_selector(".chart-container")
         return await chart_container.screenshot(type='png')
     except Exception as e:
@@ -79,7 +79,7 @@ async def capture_tradingview_charts(url_list):
         ])
         context = await browser.new_context(viewport={"width": 1420, "height": 800})
 
-        semaphore = asyncio.Semaphore(1)
+        semaphore = asyncio.Semaphore(3)
 
         async def process_url(url, file_name):
             async with semaphore:

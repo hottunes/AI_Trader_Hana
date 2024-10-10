@@ -233,7 +233,7 @@ def run_make_decision_and_execute() -> None:
 if __name__ == "__main__":
     initialize_db()
     run_make_decision_and_execute()
-    for hour in ["03:57", "07:57", "11:57", "15:57", "19:57", "23:57"]:
+    for hour in ["03:59", "07:59", "11:59", "15:59", "19:59", "23:59"]:
         schedule.every().day.at(hour, "UTC").do(run_make_decision_and_execute)
 
     logger.info("Scheduler initialized. Waiting for scheduled runs.")

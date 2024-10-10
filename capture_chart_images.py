@@ -23,8 +23,8 @@ async def navigate_and_capture(page, url):
     try:
         logger.info(f"Navigating to {url}")
         await page.goto(url, timeout=300000)
-        logger.info("Waiting 120 seconds for elements to load...")
-        await asyncio.sleep(120)  # Wait for all elements to load
+        logger.info("Waiting 60 seconds for elements to load...")
+        await asyncio.sleep(60)  # Wait for all elements to load
         chart_container = await page.query_selector(".chart-container")
         return await chart_container.screenshot(type='png')
     except Exception as e:

@@ -22,7 +22,7 @@ def get_chart_images():
 async def navigate_and_capture(page, url):
     try:
         logger.info(f"Navigating to {url}")
-        await page.goto(url, timeout=3000000)
+        await page.goto(url, timeout=300000)
         logger.info("Waiting 120 seconds for elements to load...")
         await asyncio.sleep(120)  # Wait for all elements to load
         chart_container = await page.query_selector(".chart-container")
